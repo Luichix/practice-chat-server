@@ -10,6 +10,7 @@ const { resolvers, pubsub } = require('./schema/resolvers')
 
 const startApolloServer = async () => {
   const app = express()
+  app.use(express.static('build'))
   const httpServer = createServer(app)
 
   const schema = makeExecutableSchema({
