@@ -1,6 +1,6 @@
 const { createServer } = require('http')
 const { ApolloServer } = require('apollo-server-express')
-const express = require('express')
+const app = require('./app')
 const { ApolloServerPluginDrainHttpServer } = require('apollo-server-core')
 const { makeExecutableSchema } = require('@graphql-tools/schema')
 const { WebSocketServer } = require('ws')
@@ -9,8 +9,6 @@ const { typeDefs } = require('./schema/typeDefs')
 const { resolvers, pubsub } = require('./schema/resolvers')
 
 const startApolloServer = async () => {
-  const app = express()
-  app.use(express.static('build'))
   const httpServer = createServer(app)
 
   const schema = makeExecutableSchema({
