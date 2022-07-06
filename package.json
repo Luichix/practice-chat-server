@@ -1,0 +1,38 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "server": "nodemon index.js",
+    "lint": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luichix/chat-server.git"
+  },
+  "author": "Luichix",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luichix/chat-server/issues"
+  },
+  "homepage": "https://github.com/Luichix/chat-server#readme",
+  "dependencies": {
+    "@graphql-tools/schema": "^8.5.0",
+    "apollo-server-core": "^3.9.0",
+    "apollo-server-express": "^3.9.0",
+    "express": "^4.18.1",
+    "graphql-subscriptions": "^2.0.0",
+    "graphql-ws": "^5.9.1",
+    "http": "^0.0.1-security",
+    "ws": "^8.8.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "jest": "^28.1.2",
+    "nodemon": "^2.0.19",
+    "prettier": "^2.7.1"
+  }
+}
