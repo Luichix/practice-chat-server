@@ -1,5 +1,7 @@
 require('dotenv').config()
 
+const PORT = process.env.PORT
+
 const PostgreSQL = {
   database: {
     host: process.env.POSTGRESQL_HOST,
@@ -10,5 +12,6 @@ const PostgreSQL = {
 }
 
 module.exports = {
+  PORT,
   PostgreSQL,
 }

@@ -7,6 +7,8 @@ const { WebSocketServer } = require('ws')
 const { useServer } = require('graphql-ws/lib/use/ws')
 const { typeDefs } = require('./schema/typeDefs')
 const { resolvers, pubsub } = require('./schema/resolvers')
+const config = require('./utils/config')
+const logger = require('./utils/logger')
 
 const startApolloServer = async () => {
   const httpServer = createServer(app)
@@ -45,8 +47,10 @@ const startApolloServer = async () => {
   await server.start()
 
   server.applyMiddleware({ app, path: '/graphql', cors: true })
-  await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve))
-  console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
+  await new Promise((resolve) =>
+    httpServer.listen({ port: config.PORT }, resolve)
+  )
+  logger.info(`🚀 Server running on port ${config.PORT}`)
   return { server, app }
 }
 
