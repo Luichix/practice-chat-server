@@ -16,8 +16,7 @@ const typeDefs = gql`
     allMessages: [Message]!
   }
   type Mutation {
-    addMessage(text: String!, createdAt: String!, uid: ID!): Message
-    sendMessage(text: String!, uid: ID!): Message
+    addMessage(text: String!, uid: ID!): Message
   }
   type Subscription {
     messageAdded: Message!
