@@ -1,5 +1,6 @@
 const { prisma } = require('../prisma/client')
 const { PubSub } = require('graphql-subscriptions')
+const { GraphQLDate } = require('graphql-scalars')
 
 const pubsub = new PubSub()
 
@@ -42,6 +43,7 @@ const resolvers = {
       subscribe: () => pubsub.asyncIterator(SUBSCRIPTION_EVENTS.MESSAGE_ADDED),
     },
   },
+  Date: GraphQLDate,
 }
 
 module.exports = { resolvers, pubsub }
