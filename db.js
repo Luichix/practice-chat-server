@@ -21,4 +21,43 @@ module.exports = {
       date: new Date('2017-08-17'),
     },
   ],
+  clientesActivos: [
+    {
+      uid: '123',
+      nombre: 'name',
+      empresa: 'business',
+      usuario: [
+        {
+          cliente: 'client', // whatsapp - web (id temporal) (telefono)
+          agente: 'agent',
+          estado: 'state',
+        },
+      ],
+    },
+  ],
+  Mensaje: [
+    {
+      cid: 'cid', // id del mensaje
+      rid: 'rid', // id de la sala
+      uid: 'uid', // id del usuario
+      euid: 'euid', // numero de telefono / valor aleatorio
+      aid: 'aid', // id
+      agente: 'agent', // nombre del agente
+      nombre: 'name',
+      empresa: 'enterprise',
+      canal: 'channel',
+      fecha: 'date',
+      text: 'text',
+    },
+  ],
+  ChatRoom: [
+    {
+      mid: '',
+      rid: '',
+      uid: '',
+      nombre: '',
+      empresa: '',
+      canal: '',
+    },
+  ],
 }
